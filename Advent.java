@@ -9,7 +9,7 @@ public class Advent{
     public static void main(String[] args) {
         
         // day1Part1(); //=290784
-        day1Part2();
+        // day1Part2(); //=177337980
 
     } 
 
@@ -18,6 +18,7 @@ public class Advent{
 
         int expense1 = 0;
         int expense2 = 0;
+        boolean found = false;
         // HashSet<Integer> dividend = new HashSet<Integer>();
         ArrayList<Integer> expenseReport = new ArrayList<Integer>();
 
@@ -45,8 +46,12 @@ public class Advent{
                 if (expense+expenseReport.get(j) == 2020) {
                     expense1 = expense;
                     expense2 = expenseReport.get(j);
+                    found = true;
                     break;
                 }
+            }
+            if (found) {
+                break;
             }
         }
 
@@ -55,9 +60,11 @@ public class Advent{
 
     // What is the product of the three entries that sum to 2020?
     public static void day1Part2() {
+
         int expense1 = 0;
         int expense2 = 0;
         int expense3 = 0;
+        boolean found = false;
         // HashSet<Integer> dividend = new HashSet<Integer>();
         ArrayList<Integer> expenseReport = new ArrayList<Integer>();
 
@@ -86,13 +93,20 @@ public class Advent{
                         expense1 = expenseReport.get(i);
                         expense2 = expenseReport.get(j);
                         expense3 = expenseReport.get(k);
-                        break;
+                        found = true;
                     }
                 }
+                if (found) {
+                    break;
+                }
+            }
+            if (found) {
+                break;
             }
         }
         
         System.out.println(expense1*expense2*expense3);
 
     }
+
 }
