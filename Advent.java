@@ -176,7 +176,7 @@ public class Advent{
         return out;
     }
 
-     // How many passwords are valid according to their updated policies?
+    // How many passwords are valid according to their updated policies?
     public static void day2Part2() {
         int valid = 0;
 
