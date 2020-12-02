@@ -5,13 +5,13 @@ import java.io.IOException;
 public class day2 {
 
     public static void main(String[] args) {
-        day2Part1(); //=410
-        day2Part2(); //=694
+        getDay2(); //=410, 694
     }
 
     // How many passwords are valid according to their policies?
-    public static void day2Part1() {
+    public static void getDay2() {
         int valid = 0;
+        int updateValid = 0;
 
         BufferedReader reader;
         try {
@@ -23,6 +23,9 @@ public class day2 {
                 if (confirmPolicy(line)) {
                     valid++;
                 }
+                if (confirmUpdatedPolicy(line)) {
+                    updateValid++;
+                }
                 // read next line
                 line = reader.readLine();
             }
@@ -32,6 +35,7 @@ public class day2 {
         }
         
         System.out.println(valid);
+        System.out.println(updateValid);
 
     }
 
@@ -48,6 +52,14 @@ public class day2 {
         }
 
         return count <= range[1] && count >= range[0];
+    }
+
+    public static boolean confirmUpdatedPolicy(String s) {
+        String[] split = s.split(" ");
+        int[] range = findRange(split[0]);
+        char c = split[1].charAt(0);
+
+        return (split[2].charAt(range[0] - 1) == c &&  split[2].charAt(range[1] - 1) != c) || (split[2].charAt(range[0] - 1) != c &&  split[2].charAt(range[1] - 1) == c);
     }
 
     public static int[] findRange(String s) {
@@ -71,39 +83,6 @@ public class day2 {
         out[0] = Integer.parseInt(num1); 
         out[1] = Integer.parseInt(num2); 
         return out;
-    }
-
-    // How many passwords are valid according to their updated policies?
-    public static void day2Part2() {
-        int valid = 0;
-
-        BufferedReader reader;
-        try {
-            reader = new BufferedReader(new FileReader(
-                    "./data/Day2.data"));
-            String line = reader.readLine();
-            while (line != null) {
-
-                if (confirmUpdatedPolicy(line)) {
-                    valid++;
-                }
-                // read next line
-                line = reader.readLine();
-            }
-            reader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        
-        System.out.println(valid);
-    }
-
-    public static boolean confirmUpdatedPolicy(String s) {
-        String[] split = s.split(" ");
-        int[] range = findRange(split[0]);
-        char c = split[1].charAt(0);
-
-        return (split[2].charAt(range[0] - 1) == c &&  split[2].charAt(range[1] - 1) != c) || (split[2].charAt(range[0] - 1) != c &&  split[2].charAt(range[1] - 1) == c);
     }
 
 }
