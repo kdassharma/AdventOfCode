@@ -11,7 +11,7 @@ public class Advent{
         // day1Part1(); //=290784
         // day1Part2(); //=177337980
         //day2Part1(); //=410
-        day2Part2(); //=
+        day2Part2(); //=694
 
     } 
 
