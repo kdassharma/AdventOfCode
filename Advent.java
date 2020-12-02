@@ -94,6 +94,7 @@ public class Advent{
                         expense2 = expenseReport.get(j);
                         expense3 = expenseReport.get(k);
                         found = true;
+			break;
                     }
                 }
                 if (found) {
