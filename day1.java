@@ -25,9 +25,7 @@ public class day1 {
                     "./data/Day1.data"));
             String line = reader.readLine();
             while (line != null) {
-                // dividend.add(2020 - Integer.parseInt(line));
                 expenseReport.add(Integer.parseInt(line));
-                // System.out.println(line);
                 // read next line
                 line = reader.readLine();
             }
