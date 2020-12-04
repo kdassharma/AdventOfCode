@@ -28,7 +28,6 @@ public class day3 {
             String line = reader.readLine();
             while (line != null) {
                 if (lineCount%down == 0) {
-                    
                     pos = pos%line.length();
                     if (line.charAt(pos) == '#') {
                         trees++;
