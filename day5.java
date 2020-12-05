@@ -41,7 +41,7 @@ public class day5 {
 
         printSeats(seats);
         findSeat(seats);
-        System.out.println(highestSeatID);
+        System.out.println("Highest seat ID: "+highestSeatID);
     }
 
     public static int search(String s, int[] range, int charIndex, char[] key) {
@@ -79,20 +79,21 @@ public class day5 {
             }
         }
         int seatID = row*8+col;
-        System.out.println("My seat is at: "+ seatID);
+        System.out.println("My seat ID is at: "+ seatID);
     }
 
     public static void printSeats(char[][] seats) {
-        for (int i = 0; i<seats.length; i++) {
-            System.out.println("-----------------");
-            System.out.print("|");
-            for (int j = 0; j<seats[i].length; j++) {
-                if (seats[i][j] == '#') {
-                    System.out.print("#|");
+        for (int i = 0; i<seats[i].length; i++) {
+            for (int j = 0; j<seats.length; j++) {
+                if (seats[j][i] == '#') {
+                    System.out.print("#");
                 }
                 else {
-                    System.out.print(" |");
+                    System.out.print("]");
                 }
+            }
+            if (i==1 || i==5) {
+                System.out.println("");
             }
             System.out.println("");
         }
