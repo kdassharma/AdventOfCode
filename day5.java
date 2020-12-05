@@ -5,13 +5,6 @@ import java.io.IOException;
 public class day5 {
     public static void main(String[] args) {
         getDay5(); //908
-        // int[] rowRange = {0, 127};
-        // int[] columnRange = {0, 7};
-        // char[] rowKey = {'F','B'};
-        // char[] columnKey = {'L','R'};
-        // System.out.println(search("BBFFBBF",rowRange, 0, rowKey));
-        // System.out.println(search("RLL",columnRange, 0, columnKey));
-
     }
 
     public static void getDay5() {
