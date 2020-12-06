@@ -51,19 +51,16 @@ public class day5 {
             }
             return range[1];
         }
-        int out;
+
         int middle = (range[1] + range[0])/2;
         if (s.charAt(charIndex) == key[0]) {
             int[] lowerHalf = {range[0],middle}; 
-            out = search(s, lowerHalf,charIndex + 1, key);
+            return search(s, lowerHalf,charIndex + 1, key);
         }
 
-        else {
-            int[] upperHalf = {middle+1,range[1]};
-            out = search(s, upperHalf,charIndex+ 1, key);
-        }
+        int[] upperHalf = {middle+1,range[1]};
+        return search(s, upperHalf,charIndex+ 1, key);
 
-        return out;
     }
 
     public static void findSeat(char[][] seats) {
@@ -98,7 +95,6 @@ public class day5 {
             System.out.println("");
         }
     }
-
 }
 
 // ]#################################################################################################################]]]]]]]]]]]]]]
